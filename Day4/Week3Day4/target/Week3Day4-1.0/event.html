@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .mydiv {width: 25px; height: 25px;background-color:yellow; margin:1px;}
+        </style>
+    </head>
+    <body>
+        
+        <div id="outer" onclick="sayHiForAll()">
+                
+        <div class="mydiv" id="div1" onclick="sayHi(id)">Div</div>
+        <div class="mydiv" id="div2" onclick="sayHi(id)">Div</div>
+        <div class="mydiv" id="div3" onclick="sayHi(id)">Div</div>
+        <div class="mydiv" id="div4" onclick="sayHi(id)">Div</div>
+        <div class="mydiv" id="div5" onclick="sayHi(id)">Div</div>
+        <div class="mydiv" id="div6" onclick="sayHi(id)">Div</div>
+        <div class="mydiv" id="div7" onclick="sayHi(id)">Div</div>
+        <div class="mydiv" id="div8" onclick="sayHi(id)">Div</div>
+        <div class="mydiv" id="div9" onclick="sayHi(id)">Div</div>
+        <div class="mydiv" id="div10" onclick="sayHi(id)">Div</div>       
+        
+        </div>
+        
+        <script> 
+        function sayHi(id) {
+            console.log("Hi from " + id);
+        }
+        
+        function sayHiForAll(e) {
+            var target = e.target;
+            console.log(target);
+        }
+        </script>
+
+    </body>
+</html>

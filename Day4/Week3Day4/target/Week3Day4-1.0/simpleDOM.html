@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div id="outer">
+        
+        <div id="div1">I am div 1</div>
+        <div id="div2">I am div 2</div>
+        <div id="div3">I am div 3</div>
+        
+        <button id="button" onclick="colour()">Click me to change text color to pink.</button>
+        
+        <div id="div4" onclick="writeToConsole(id)">I am div 4</div>
+        <div id="div5" onclick="writeToConsole(id)">I am div 5</div>
+        
+        </div>
+        
+        <script>
+            
+            function colour() {
+            document.getElementById("div1").style.backgroundColor = "pink"
+            document.getElementById("div2").style.backgroundColor = "pink"
+            document.getElementById("div3").style.backgroundColor = "pink"
+            document.getElementById("button").style.backgroundColor = "pink"
+        }
+        
+            function writeToConsole(id) {    
+            console.log("Hi from id " + id);    
+            }
+            
+            var outer = document.getElementById("outer");
+            outer.onclick = fuction(e) {
+                
+                var me = this
+                var target = e.target
+                
+                console.log(me.id)
+                console.log(target.id)
+            }
+
+        
+        </script>
+        
+    </body>
+</html>

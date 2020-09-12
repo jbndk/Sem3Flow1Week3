@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    
+    <style>
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #cccccc;
+            padding: 5px;
+        }
+        
+        th {
+            font-weight: bold;
+        }
+        
+    </style>
+    
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        
+        <table> 
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Year</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            
+            <tbody id="tableData"></tbody>
+        </table>
+        <br><br>
+        
+        <label for="price">Filter by price:</label><input type="text" id="fprice">  
+        <input type="submit" value="submit" id="filterPrice">
+        
+        <script>
+            
+var cars = [
+  { id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000 },
+  { id: 2, year: 1999, make: 'Chevy', model: 'Venture', price: 4900 },
+  { id: 3, year: 2000, make: 'Chevy', model: 'Venture', price: 5000 },
+  { id: 4, year: 1996, make: 'Jeep', model: 'Grand Cherokee', price: 4799 },
+  { id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799 }
+];
+
+function filterPrice () {
+    var filteredPrice = document.getElementById("fprice").value;
+    var carsFilteredByPrice = cars.filter(function (car) {
+    return car.price < filteredPrice;
+    })
+    loadTable(carsFilteredByPrice);
+    document.getElementById("fprice").value = "";
+}
+
+document.getElementById("filterPrice").addEventListener("click", filterPrice);
+
+function loadTable (data) {
+    var tableBody = document.getElementById("tableData");
+    var dataHtml = "";
+    
+    for(var car of data) {
+        dataHtml += `<tr><td>${car.id}</td><td>${car.year}</td><td>${car.make}</td><td>${car.model}</td><td>${car.price}</td></tr>`;
+    }
+    
+    tableBody.innerHTML = dataHtml;   
+}
+
+window.onload = () => {
+    loadTable(cars);
+}
+
+</script>
+
+</body>
+</html>
